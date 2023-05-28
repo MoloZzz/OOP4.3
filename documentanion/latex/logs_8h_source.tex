@@ -1,0 +1,32 @@
+\doxysection{C\+:/\+Users/megao/\+Documents/\+Git\+Hub/\+OOP4.3/logs.h}
+\hypertarget{logs_8h_source}{}\label{logs_8h_source}\mbox{\hyperlink{logs_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ OOP4\_3\_LOGS\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ OOP4\_3\_LOGS\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00020\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{logs_8h_a5e38b92fe1205827073c88cdb5c82914}{log}}(\textcolor{keywordtype}{string}\ massage,\ \textcolor{keywordtype}{string}\ file)\{}
+\DoxyCodeLine{00021\ \ \ \ \ ofstream\ logsFile;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ logsFile.open(file,ios\_base::app);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{if}(!logsFile.is\_open())\{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}error\ with\ logs"{}}\ <<endl;}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ logsFile\ <<\ massage\ <<\ endl;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ logsFile.close();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//OOP4\_3\_LOGS\_H}}
+
+\end{DoxyCode}

@@ -1,6 +1,7 @@
-//
-// Created by megao on 27.05.2023.
-//
+/**
+ * @file complexInt.h
+ * @brief Заголовочний файл для класу Complex
+ */
 
 #ifndef OOP4_3_COMLEXINT_H
 #define OOP4_3_COMLEXINT_H
@@ -15,46 +16,77 @@ using namespace std;
 
 
 
-
+/**
+ * @class Complex
+ * @brief Клас для комплексних чисел
+ */
 class Complex
 {
 private:
-    double re, im;
+    double re; /**< Дійсна частина комплексного числа */
+    double im; /**< Уявна частина комплексного числа */
 
 public:
-
+    /**
+     * @brief Конструктор за замовчуванням
+     */
     Complex()
     {
     };
 
+    /**
+     * @brief Конструктор з одним параметром
+     * @param r Дійсна частина комплексного числа
+     */
     Complex(double r)
     {
         re = r;
         im = 0;
     }
 
+    /**
+     * @brief Конструктор з двома параметрами
+     * @param r Дійсна частина комплексного числа
+     * @param i Уявна частина комплексного числа
+     */
     Complex(double r, double i)
     {
         re = r;
         im = i;
     }
 
+    /**
+     * @brief Конструктор копіювання
+     * @param c Об'єкт класу Complex для копіювання
+     */
     Complex(const Complex& c)
     {
         re = c.re;
         im = c.im;
     }
 
+    /**
+     * @brief Деструктор
+     */
     ~Complex()
     {
     }
 
 
+    /**
+     * @brief Обчислення модуля комплексного числа
+     * @return Модуль комплексного числа
+     */
     double abs()
     {
         return sqrt(re * re + im * im);
     }
 
+    /**
+     * @brief Перегрузка оператора присвоєння
+     * @param c Об'єкт класу Complex для присвоєння
+     * @return Посилання на об'єкт, на який було здійснено присвоєння
+     */
     Complex& operator = (Complex& c)
     {
         re = c.re;
@@ -63,6 +95,11 @@ public:
         return (*this);
     }
 
+    /**
+     * @brief Перегрузка оператора додавання з присвоєнням
+     * @param c Об'єкт класу Complex для додавання
+     * @return Посилання на об'єкт, на який було здійснено додавання
+     */
     Complex& operator += (Complex& c)
     {
         re += c.re;
@@ -70,6 +107,11 @@ public:
         return *this;
     }
 
+    /**
+     * @brief Перегрузка оператора менше
+     * @param c Об'єкт класу Complex для порівняння
+     * @return Результат порівняння
+     */
     bool operator < (Complex c)
     {
         if (re < c.re) {
@@ -81,6 +123,11 @@ public:
         return false;
     }
 
+    /**
+     * @brief Перегрузка оператора більше
+     * @param c Об'єкт класу Complex для порівняння
+     * @return Результат порівняння
+     */
     bool operator > (Complex c)
     {
         if (re > c.re) {
@@ -92,6 +139,11 @@ public:
 
     }
 
+    /**
+     * @brief Перегрузка оператора рівності
+     * @param c Об'єкт класу Complex для порівняння
+     * @return Результат порівняння
+     */
     bool operator == (Complex c)
     {
         if (re == c.re && im == c.im) {
@@ -102,6 +154,10 @@ public:
     }
 
 
+    /**
+     * @brief Повертає рядкове представлення комплексного числа
+     * @return Рядкове представлення комплексного числа
+     */
     string getString() {
 
         ostringstream s1,s2;

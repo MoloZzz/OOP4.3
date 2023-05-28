@@ -1,6 +1,7 @@
-//
-// Created by megao on 27.05.2023.
-//
+/**
+ * @file logs.h
+ * @brief Заголовочний файл для логування
+ */
 
 #ifndef OOP4_3_LOGS_H
 #define OOP4_3_LOGS_H
@@ -10,6 +11,12 @@
 
 using namespace std;
 
+
+/**
+ * @brief Записує повідомлення до лог-файлу
+ * @param message Повідомлення для запису
+ * @param file Шлях до лог-файлу
+ */
 void log(string massage, string file){
     ofstream logsFile;
 

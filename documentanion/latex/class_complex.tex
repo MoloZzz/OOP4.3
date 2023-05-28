@@ -1,0 +1,217 @@
+\doxysection{Complex Class Reference}
+\hypertarget{class_complex}{}\label{class_complex}\index{Complex@{Complex}}
+
+
+Клас для комплексних чисел  
+
+
+
+
+{\ttfamily \#include $<$comlex\+Int.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_complex_a43b9f07cdf697c71b5fd506a6cc80b8f}\label{class_complex_a43b9f07cdf697c71b5fd506a6cc80b8f} 
+{\bfseries Complex} ()
+\begin{DoxyCompactList}\small\item\em Конструктор за замовчуванням \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_complex_a5ef29d91cbdfe6710c052f23c90d260d}{Complex}} (double r)
+\begin{DoxyCompactList}\small\item\em Конструктор з одним параметром \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_complex_af56593c9b976452fd1480c1cc9e7a8c7}{Complex}} (double r, double i)
+\begin{DoxyCompactList}\small\item\em Конструктор з двома параметрами \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_complex_ad6b6aba985d85982e621b244c5533ce6}{Complex}} (const \mbox{\hyperlink{class_complex}{Complex}} \&c)
+\begin{DoxyCompactList}\small\item\em Конструктор копіювання \end{DoxyCompactList}\item 
+\Hypertarget{class_complex_a70e14b17c92e3da779686b98f9f3bb2d}\label{class_complex_a70e14b17c92e3da779686b98f9f3bb2d} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Complex} ()
+\begin{DoxyCompactList}\small\item\em Деструктор \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_complex_a58d7c29c61d424236f183767ed57b716}{abs}} ()
+\begin{DoxyCompactList}\small\item\em Обчислення модуля комплексного числа \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_complex}{Complex}} \& \mbox{\hyperlink{class_complex_a326b5e59f1cfdf50c1a4936356e17020}{operator=}} (\mbox{\hyperlink{class_complex}{Complex}} \&c)
+\begin{DoxyCompactList}\small\item\em Перегрузка оператора присвоєння \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_complex}{Complex}} \& \mbox{\hyperlink{class_complex_a4b1977c4f3d9bc7a589868c03762171e}{operator+=}} (\mbox{\hyperlink{class_complex}{Complex}} \&c)
+\begin{DoxyCompactList}\small\item\em Перегрузка оператора додавання з присвоєнням \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_complex_a92368dab6df63f332b0e4391888edf4d}{operator$<$}} (\mbox{\hyperlink{class_complex}{Complex}} c)
+\begin{DoxyCompactList}\small\item\em Перегрузка оператора менше \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_complex_a88c55a3504f8c9692c4082383444e26f}{operator$>$}} (\mbox{\hyperlink{class_complex}{Complex}} c)
+\begin{DoxyCompactList}\small\item\em Перегрузка оператора більше \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_complex_a958b8753192942ab2b7ac7707da5acd4}{operator==}} (\mbox{\hyperlink{class_complex}{Complex}} c)
+\begin{DoxyCompactList}\small\item\em Перегрузка оператора рівності \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_complex_ab7ee110f217bb2a3cf3ad40efa095b6f}{get\+String}} ()
+\begin{DoxyCompactList}\small\item\em Повертає рядкове представлення комплексного числа \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Клас для комплексних чисел 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_complex_a5ef29d91cbdfe6710c052f23c90d260d}\label{class_complex_a5ef29d91cbdfe6710c052f23c90d260d} 
+\index{Complex@{Complex}!Complex@{Complex}}
+\index{Complex@{Complex}!Complex@{Complex}}
+\doxysubsubsection{\texorpdfstring{Complex()}{Complex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Complex\+::\+Complex (\begin{DoxyParamCaption}\item[{double}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Конструктор з одним параметром 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Дійсна частина комплексного числа \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_complex_af56593c9b976452fd1480c1cc9e7a8c7}\label{class_complex_af56593c9b976452fd1480c1cc9e7a8c7} 
+\index{Complex@{Complex}!Complex@{Complex}}
+\index{Complex@{Complex}!Complex@{Complex}}
+\doxysubsubsection{\texorpdfstring{Complex()}{Complex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Complex\+::\+Complex (\begin{DoxyParamCaption}\item[{double}]{r,  }\item[{double}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Конструктор з двома параметрами 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Дійсна частина комплексного числа \\
+\hline
+{\em i} & Уявна частина комплексного числа \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_complex_ad6b6aba985d85982e621b244c5533ce6}\label{class_complex_ad6b6aba985d85982e621b244c5533ce6} 
+\index{Complex@{Complex}!Complex@{Complex}}
+\index{Complex@{Complex}!Complex@{Complex}}
+\doxysubsubsection{\texorpdfstring{Complex()}{Complex()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Complex\+::\+Complex (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_complex}{Complex}} \&}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Конструктор копіювання 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Об\textquotesingle{}єкт класу \doxylink{class_complex}{Complex} для копіювання \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_complex_a58d7c29c61d424236f183767ed57b716}\label{class_complex_a58d7c29c61d424236f183767ed57b716} 
+\index{Complex@{Complex}!abs@{abs}}
+\index{abs@{abs}!Complex@{Complex}}
+\doxysubsubsection{\texorpdfstring{abs()}{abs()}}
+{\footnotesize\ttfamily double Complex\+::abs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Обчислення модуля комплексного числа 
+
+\begin{DoxyReturn}{Returns}
+Модуль комплексного числа 
+\end{DoxyReturn}
+\Hypertarget{class_complex_ab7ee110f217bb2a3cf3ad40efa095b6f}\label{class_complex_ab7ee110f217bb2a3cf3ad40efa095b6f} 
+\index{Complex@{Complex}!getString@{getString}}
+\index{getString@{getString}!Complex@{Complex}}
+\doxysubsubsection{\texorpdfstring{getString()}{getString()}}
+{\footnotesize\ttfamily string Complex\+::get\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Повертає рядкове представлення комплексного числа 
+
+\begin{DoxyReturn}{Returns}
+Рядкове представлення комплексного числа 
+\end{DoxyReturn}
+\Hypertarget{class_complex_a4b1977c4f3d9bc7a589868c03762171e}\label{class_complex_a4b1977c4f3d9bc7a589868c03762171e} 
+\index{Complex@{Complex}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Complex@{Complex}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_complex}{Complex}} \& Complex\+::operator+= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_complex}{Complex}} \&}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Перегрузка оператора додавання з присвоєнням 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Об\textquotesingle{}єкт класу \doxylink{class_complex}{Complex} для додавання \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Посилання на об\textquotesingle{}єкт, на який було здійснено додавання 
+\end{DoxyReturn}
+\Hypertarget{class_complex_a92368dab6df63f332b0e4391888edf4d}\label{class_complex_a92368dab6df63f332b0e4391888edf4d} 
+\index{Complex@{Complex}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Complex@{Complex}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Complex\+::operator$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_complex}{Complex}}}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Перегрузка оператора менше 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Об\textquotesingle{}єкт класу \doxylink{class_complex}{Complex} для порівняння \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Результат порівняння 
+\end{DoxyReturn}
+\Hypertarget{class_complex_a326b5e59f1cfdf50c1a4936356e17020}\label{class_complex_a326b5e59f1cfdf50c1a4936356e17020} 
+\index{Complex@{Complex}!operator=@{operator=}}
+\index{operator=@{operator=}!Complex@{Complex}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_complex}{Complex}} \& Complex\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_complex}{Complex}} \&}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Перегрузка оператора присвоєння 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Об\textquotesingle{}єкт класу \doxylink{class_complex}{Complex} для присвоєння \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Посилання на об\textquotesingle{}єкт, на який було здійснено присвоєння 
+\end{DoxyReturn}
+\Hypertarget{class_complex_a958b8753192942ab2b7ac7707da5acd4}\label{class_complex_a958b8753192942ab2b7ac7707da5acd4} 
+\index{Complex@{Complex}!operator==@{operator==}}
+\index{operator==@{operator==}!Complex@{Complex}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Complex\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_complex}{Complex}}}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Перегрузка оператора рівності 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Об\textquotesingle{}єкт класу \doxylink{class_complex}{Complex} для порівняння \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Результат порівняння 
+\end{DoxyReturn}
+\Hypertarget{class_complex_a88c55a3504f8c9692c4082383444e26f}\label{class_complex_a88c55a3504f8c9692c4082383444e26f} 
+\index{Complex@{Complex}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!Complex@{Complex}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily bool Complex\+::operator$>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_complex}{Complex}}}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Перегрузка оператора більше 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Об\textquotesingle{}єкт класу \doxylink{class_complex}{Complex} для порівняння \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Результат порівняння 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/megao/\+Documents/\+Git\+Hub/\+OOP4.\+3/comlex\+Int.\+h\end{DoxyCompactItemize}

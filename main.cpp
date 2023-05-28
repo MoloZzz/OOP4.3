@@ -1,3 +1,9 @@
+/**
+ * @file main.cpp
+ * @brief Головний файл програми
+ */
+
+
 #include <iostream>
 #include"comlexInt.h"
 #include "B-treeClass.h"
@@ -19,7 +25,12 @@ using namespace std;
 
 
 
-
+/**
+ * @brief Генерує випадкове ціле число у заданому діапазоні
+ * @param min Мінімальне значення
+ * @param max Максимальне значення
+ * @return Випадкове ціле число
+ */
 int randomInt(int min, int max)
 {
     std::random_device rd;
@@ -28,7 +39,9 @@ int randomInt(int min, int max)
     return mersenne()%max;
 }
 
-
+/**
+ * @brief Створює дерево та перевіряє його роботу
+ */
 void createTreeAndCheck(){
     BTree t(3);
 
@@ -60,6 +73,9 @@ void createTreeAndCheck(){
     : cout << endl << m.getString() << " not find\n" << endl;
 }
 
+/**
+ * @brief Створює випадкове дерево
+ */
 void createRandomTree(){
     BTree t(3);
 
@@ -73,10 +89,16 @@ void createRandomTree(){
 
 }
 
-
+/**
+ * @brief Функція, яка використовується в потоці
+ */
 void funcForThread(){
         createRandomTree();
 }
+
+/**
+ * @brief Виконує створення випадкових дерев у потоках
+ */
 void threadV(){
     thread newThread1(funcForThread);
     thread newThread2(funcForThread);
@@ -91,6 +113,9 @@ void threadV(){
     newThread5.join();
 }
 
+/**
+ * @brief Виконує створення випадкових дерев без використання потоків
+ */
 void noThreadV(){
     for(int i = 5; i > 0 ; i--)
     createRandomTree();
@@ -99,6 +124,18 @@ void noThreadV(){
 //logs
 #include "logs.h"
 
+
+/**
+ * @brief Формує рядок з даними для логу
+ * @param seconds Кількість секунд
+ * @param mode Режим (з потоками або без)
+ * @param count Кількість створених дерев
+ * @param action Дія (створення дерева)
+ * @param max Максимальне значення
+ * @param nodes Кількість вузлів у дереві
+ * @param threads Кількість потоків
+ * @return Строка з даними для логу
+ */
 string createStr(double seconds,string mode,int count,string action,int max,int nodes,int threads = 1){
 
         return "{\"time\":" + to_string(seconds) + ",\"mode\":" + mode + ",\"threads\":" + to_string(threads) + + ",\"count\":"
@@ -108,6 +145,10 @@ string createStr(double seconds,string mode,int count,string action,int max,int 
 }
 
 
+/**
+ * @brief Головна функція програми
+ * @return Код повернення
+ */
 int main() {
 
     string filePath = "C:\\Users\\megao\\Documents\\GitHub\\OOP4.3\\ourLogs.txt";

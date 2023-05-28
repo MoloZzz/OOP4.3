@@ -1,0 +1,110 @@
+\doxysection{C\+:/\+Users/megao/\+Documents/\+Git\+Hub/\+OOP4.3/main.cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{C:/Users/megao/Documents/GitHub/OOP4.3/main.cpp@{C:/Users/megao/Documents/GitHub/OOP4.3/main.cpp}}
+
+
+Головний файл програми  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \"{}comlex\+Int.\+h\"{}}\newline
+{\ttfamily \#include \"{}B-\/tree\+Class.\+h\"{}}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include \"{}logs.\+h\"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_a2bfdea9260301d9292a7ab002eeb4645}{random\+Int}} (int min, int max)
+\begin{DoxyCompactList}\small\item\em Генерує випадкове ціле число у заданому діапазоні \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_adf23ff73c4ae72f83a13ce2f62bc38a4}\label{main_8cpp_adf23ff73c4ae72f83a13ce2f62bc38a4} 
+void {\bfseries create\+Tree\+And\+Check} ()
+\begin{DoxyCompactList}\small\item\em Створює дерево та перевіряє його роботу \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_a00d83d48ccb0983059875a278470564f}\label{main_8cpp_a00d83d48ccb0983059875a278470564f} 
+void {\bfseries create\+Random\+Tree} ()
+\begin{DoxyCompactList}\small\item\em Створює випадкове дерево \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_a8c9d3291264b1cdb0638c33466f6c547}\label{main_8cpp_a8c9d3291264b1cdb0638c33466f6c547} 
+void {\bfseries func\+For\+Thread} ()
+\begin{DoxyCompactList}\small\item\em Функція, яка використовується в потоці \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_a7c9cb4ebdd903de83922c45089fb60a4}\label{main_8cpp_a7c9cb4ebdd903de83922c45089fb60a4} 
+void {\bfseries threadV} ()
+\begin{DoxyCompactList}\small\item\em Виконує створення випадкових дерев у потоках \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_a3ff9e2a05b0374812798f0c09ff515c6}\label{main_8cpp_a3ff9e2a05b0374812798f0c09ff515c6} 
+void {\bfseries no\+ThreadV} ()
+\begin{DoxyCompactList}\small\item\em Виконує створення випадкових дерев без використання потоків \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{main_8cpp_afc3c7e7d5e876792c6c3d3b3eaf8006e}{create\+Str}} (double seconds, string mode, int count, string action, int max, int nodes, int threads=1)
+\begin{DoxyCompactList}\small\item\em Формує рядок з даними для логу \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Головна функція програми \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Головний файл програми 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_afc3c7e7d5e876792c6c3d3b3eaf8006e}\label{main_8cpp_afc3c7e7d5e876792c6c3d3b3eaf8006e} 
+\index{main.cpp@{main.cpp}!createStr@{createStr}}
+\index{createStr@{createStr}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{createStr()}{createStr()}}
+{\footnotesize\ttfamily string create\+Str (\begin{DoxyParamCaption}\item[{double}]{seconds,  }\item[{string}]{mode,  }\item[{int}]{count,  }\item[{string}]{action,  }\item[{int}]{max,  }\item[{int}]{nodes,  }\item[{int}]{threads = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+Формує рядок з даними для логу 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seconds} & Кількість секунд \\
+\hline
+{\em mode} & Режим (з потоками або без) \\
+\hline
+{\em count} & Кількість створених дерев \\
+\hline
+{\em action} & Дія (створення дерева) \\
+\hline
+{\em max} & Максимальне значення \\
+\hline
+{\em nodes} & Кількість вузлів у дереві \\
+\hline
+{\em threads} & Кількість потоків \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Строка з даними для логу 
+\end{DoxyReturn}
+\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Головна функція програми 
+
+\begin{DoxyReturn}{Returns}
+Код повернення 
+\end{DoxyReturn}
+\Hypertarget{main_8cpp_a2bfdea9260301d9292a7ab002eeb4645}\label{main_8cpp_a2bfdea9260301d9292a7ab002eeb4645} 
+\index{main.cpp@{main.cpp}!randomInt@{randomInt}}
+\index{randomInt@{randomInt}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{randomInt()}{randomInt()}}
+{\footnotesize\ttfamily int random\+Int (\begin{DoxyParamCaption}\item[{int}]{min,  }\item[{int}]{max }\end{DoxyParamCaption})}
+
+
+
+Генерує випадкове ціле число у заданому діапазоні 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & Мінімальне значення \\
+\hline
+{\em max} & Максимальне значення \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Випадкове ціле число 
+\end{DoxyReturn}

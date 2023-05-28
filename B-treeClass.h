@@ -1,6 +1,7 @@
-//
-// Created by megao on 27.05.2023.
-//
+/**
+ * @file B-treeClass.h
+ * @brief Заголовочний файл для класів B-дерева
+ */
 
 #ifndef OOP4_3_B_TREECLASS_H
 #define OOP4_3_B_TREECLASS_H
@@ -9,14 +10,23 @@
 #include"comlexInt.h"
 using namespace std;
 
+/**
+ * @class TreeNode
+ * @brief Вузол B-дерева
+ */
 class TreeNode {
-    Complex* keys;
-    int t;
-    TreeNode** C;
-    int n;
-    bool leaf;
+    Complex* keys; /**< Масив ключів вузла */
+    int t; /**< Параметр B-дерева */
+    TreeNode** C; /**< Масив покажчиків на дочірні вузли */
+    int n; /**< Кількість ключів у вузлі */
+    bool leaf; /**< Прапорець, що вказує, чи є вузол листком */
 
 public:
+    /**
+     * @brief Конструктор класу TreeNode
+     * @param temp Параметр B-дерева
+     * @param bool_leaf Чи є вузол листком
+     */
     TreeNode(int temp, bool bool_leaf);
 
     void insertNonFull(Complex k);
@@ -28,11 +38,19 @@ public:
     friend class BTree;
 };
 
+/**
+ * @class BTree
+ * @brief B-дерево
+ */
 class BTree {
-    TreeNode* root;
-    int t;
+    TreeNode* root; /**< Корінь B-дерева */
+    int t; /**< Параметр B-дерева */
 
 public:
+    /**
+     * @brief Конструктор класу BTree
+     * @param temp Параметр B-дерева
+     */
     BTree(int temp) {
         root = NULL;
         t = temp;

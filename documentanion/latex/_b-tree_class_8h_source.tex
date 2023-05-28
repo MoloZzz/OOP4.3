@@ -1,0 +1,165 @@
+\doxysection{C\+:/\+Users/megao/\+Documents/\+Git\+Hub/\+OOP4.3/\+B-\/tree\+Class.h}
+\hypertarget{_b-tree_class_8h_source}{}\label{_b-tree_class_8h_source}\mbox{\hyperlink{_b-tree_class_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ OOP4\_3\_B\_TREECLASS\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ OOP4\_3\_B\_TREECLASS\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include"{}comlexInt.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_tree_node}{TreeNode}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_complex}{Complex}}*\ keys;\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ t;\ }
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_tree_node}{TreeNode}}**\ C;\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ n;\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{bool}\ leaf;\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_tree_node}{TreeNode}}(\textcolor{keywordtype}{int}\ temp,\ \textcolor{keywordtype}{bool}\ bool\_leaf);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ insertNonFull(\mbox{\hyperlink{class_complex}{Complex}}\ k);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ splitChild(\textcolor{keywordtype}{int}\ i,\ \mbox{\hyperlink{class_tree_node}{TreeNode}}*\ y);}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ traverse();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_tree_node}{TreeNode}}*\ search(\mbox{\hyperlink{class_complex}{Complex}}\ k);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_b_tree}{BTree}};}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_b_tree}{BTree}}\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_tree_node}{TreeNode}}*\ root;\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{int}\ t;\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_b_tree_ab0e2770950c09ab97df803cea749784e}{BTree}}(\textcolor{keywordtype}{int}\ temp)\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ root\ =\ NULL;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ t\ =\ temp;}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ traverse()\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (root\ !=\ NULL)}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ root-\/>traverse();}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{class_tree_node}{TreeNode}}*\ search(\mbox{\hyperlink{class_complex}{Complex}}\ k)\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (root\ ==\ NULL)\ ?\ NULL\ :\ root-\/>search(k);}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ insert(\mbox{\hyperlink{class_complex}{Complex}}\ k);}
+\DoxyCodeLine{00069\ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \mbox{\hyperlink{class_tree_node_a98d25265c89b296d9f253098962c856a}{TreeNode::TreeNode}}(\textcolor{keywordtype}{int}\ t1,\ \textcolor{keywordtype}{bool}\ leaf1)\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ t\ =\ t1;}
+\DoxyCodeLine{00074\ \ \ \ \ leaf\ =\ leaf1;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ keys\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_complex}{Complex}}[2\ *\ t\ -\/\ 1];}
+\DoxyCodeLine{00077\ \ \ \ \ C\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_tree_node}{TreeNode}}\ *\ [2\ *\ t];}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ n\ =\ 0;}
+\DoxyCodeLine{00080\ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{keywordtype}{void}\ TreeNode::traverse()\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordflow}{for}\ (i\ =\ 0;\ i\ <\ n;\ i++)\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (leaf\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ C[i]-\/>traverse();}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ keys[i].\mbox{\hyperlink{class_complex_ab7ee110f217bb2a3cf3ad40efa095b6f}{getString}}();}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordflow}{if}\ (leaf\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ C[i]-\/>traverse();}
+\DoxyCodeLine{00092\ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \mbox{\hyperlink{class_tree_node}{TreeNode}}*\ TreeNode::search(\mbox{\hyperlink{class_complex}{Complex}}\ k)\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ n\ \&\&\ (k\ >\ keys[i]))}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordflow}{if}\ (keys[i]\ ==\ k)}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordflow}{if}\ (leaf\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordflow}{return}\ C[i]-\/>search(k);}
+\DoxyCodeLine{00106\ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{keywordtype}{void}\ BTree::insert(\mbox{\hyperlink{class_complex}{Complex}}\ k)\ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{if}\ (root\ ==\ NULL)\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ root\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_tree_node}{TreeNode}}(t,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ root-\/>keys[0]\ =\ k;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ root-\/>n\ =\ 1;}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (root-\/>n\ ==\ 2\ *\ t\ -\/\ 1)\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tree_node}{TreeNode}}*\ s\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_tree_node}{TreeNode}}(t,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ s-\/>C[0]\ =\ root;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ s-\/>splitChild(0,\ root);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (s-\/>keys[0]\ <\ k)}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ s-\/>C[i]-\/>insertNonFull(k);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ root\ =\ s;}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ root-\/>insertNonFull(k);}
+\DoxyCodeLine{00130\ \ \ \ \ \}}
+\DoxyCodeLine{00131\ \}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \textcolor{keywordtype}{void}\ TreeNode::insertNonFull(\mbox{\hyperlink{class_complex}{Complex}}\ k)\ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ n\ -\/\ 1;}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordflow}{if}\ (leaf\ ==\ \textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ >=\ 0\ \&\&\ keys[i]\ >\ k)\ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ keys[i\ +\ 1]\ =\ keys[i];}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ i-\/-\/;}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ keys[i\ +\ 1]\ =\ k;}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ n\ =\ n\ +\ 1;}
+\DoxyCodeLine{00144\ \ \ \ \ \}}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ >=\ 0\ \&\&\ keys[i]\ >\ k)}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ i-\/-\/;}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (C[i\ +\ 1]-\/>n\ ==\ 2\ *\ t\ -\/\ 1)\ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ splitChild(i\ +\ 1,\ C[i\ +\ 1]);}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keys[i\ +\ 1]\ <\ k)}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ C[i\ +\ 1]-\/>insertNonFull(k);}
+\DoxyCodeLine{00156\ \ \ \ \ \}}
+\DoxyCodeLine{00157\ \}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \textcolor{keywordtype}{void}\ TreeNode::splitChild(\textcolor{keywordtype}{int}\ i,\ \mbox{\hyperlink{class_tree_node}{TreeNode}}*\ y)\ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \mbox{\hyperlink{class_tree_node}{TreeNode}}*\ z\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_tree_node}{TreeNode}}(y-\/>t,\ y-\/>leaf);}
+\DoxyCodeLine{00161\ \ \ \ \ z-\/>n\ =\ t\ -\/\ 1;}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ t\ -\/\ 1;\ j++)}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ z-\/>keys[j]\ =\ y-\/>keys[j\ +\ t];}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordflow}{if}\ (y-\/>leaf\ ==\ \textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ t;\ j++)}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ z-\/>C[j]\ =\ y-\/>C[j\ +\ t];}
+\DoxyCodeLine{00169\ \ \ \ \ \}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ y-\/>n\ =\ t\ -\/\ 1;}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ n;\ j\ >=\ i\ +\ 1;\ j-\/-\/)}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ C[j\ +\ 1]\ =\ C[j];}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ C[i\ +\ 1]\ =\ z;}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ n\ -\/\ 1;\ j\ >=\ i;\ j-\/-\/)}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ keys[j\ +\ 1]\ =\ keys[j];}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ keys[i]\ =\ y-\/>keys[t\ -\/\ 1];}
+\DoxyCodeLine{00181\ \ \ \ \ n\ =\ n\ +\ 1;}
+\DoxyCodeLine{00182\ \}}
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//OOP4\_3\_B\_TREECLASS\_H}}
+
+\end{DoxyCode}
