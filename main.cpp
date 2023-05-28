@@ -3,9 +3,6 @@
 #include "B-treeClass.h"
 
 
-
-#include <ctime>
-
 #include <random> //random
 
 #include <stdio.h>
@@ -63,48 +60,76 @@ void createTreeAndCheck(){
     : cout << endl << m.getString() << " not find\n" << endl;
 }
 
-void createRandomTreeAndCheck(){
+void createRandomTree(){
     BTree t(3);
 
-    int max = 99;
-    int length = 1000;
+    int max = 1000;
+    int length = 10000;
 
     for(int i = length; i > 0 ; i--) {
         t.insert(Complex(randomInt(1,max), randomInt(1,max)));
     }
-
     //t.traverse();
 
-    Complex k = Complex(randomInt(1,max), randomInt(1,max));
-
-    (t.search(k) != NULL)
-    ? cout << endl << k.getString() << " find"
-    : cout << endl << k.getString() << " not find\n";
-
-    Complex m = Complex(randomInt(1,max), randomInt(1,max));
-
-    (t.search(m) != NULL)
-    ? cout << endl << m.getString() << " find"
-    : cout << endl << m.getString() << " not find\n";
 }
 
+
+void funcForThread(){
+        createRandomTree();
+}
+void threadV(){
+    thread newThread1(funcForThread);
+    thread newThread2(funcForThread);
+    thread newThread3(funcForThread);
+    thread newThread4(funcForThread);
+    thread newThread5(funcForThread);
+
+    newThread1.join();
+    newThread2.join();
+    newThread3.join();
+    newThread4.join();
+    newThread5.join();
+}
+
+void noThreadV(){
+    for(int i = 5; i > 0 ; i--)
+    createRandomTree();
+}
+
+//logs
+#include "logs.h"
+
+string createStr(double seconds,string mode,int count,string action,int max,int nodes,int threads = 1){
+
+        return "{\"time\":" + to_string(seconds) + ",\"mode\":" + mode + ",\"threads\":" + to_string(threads) + + ",\"count\":"
+               + to_string(count) + ",\"action\":" + action + ",\"maxValue\":" + to_string(max) + ",\"nodes\":" +
+               to_string(nodes) + ",},";
+
+}
 
 
 int main() {
 
+    string filePath = "C:\\Users\\megao\\Documents\\GitHub\\OOP4.3\\ourLogs.txt";
+
     setlocale(LC_ALL, "Ukrainian");
 
-    clock_t start = clock();
 
-     thread newThread(createRandomTreeAndCheck);
+    for(int i = 0; i < 100; i++) {
+        clock_t start = clock();
 
-    createRandomTreeAndCheck();
+        noThreadV();
 
-    newThread.join();
+        clock_t end = clock();
 
-    clock_t end = clock();
-    double seconds = (double)(end - start) / CLOCKS_PER_SEC;
-    printf("The time: %f seconds\n", seconds);
+        double seconds = (double) (end - start) / CLOCKS_PER_SEC;
+
+        printf("\nThe time: %f seconds\n", seconds);
+
+        log(createStr(seconds, "\"noThread\"", 5, "\"createTree\"", 1000, 10000, 1), filePath);
+    }
+
+
 
 
 

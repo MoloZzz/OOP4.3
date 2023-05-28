@@ -97,7 +97,8 @@
 			"sourceIndexes" : 
 			[
 				1,
-				2
+				2,
+				3
 			]
 		}
 	],
@@ -117,6 +118,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "B-treeClass.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "logs.h",
 			"sourceGroupIndex" : 1
 		}
 	],
